@@ -3,10 +3,9 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { PerfilComponent } from './perfil/perfil.component';
-import { AccountComponent } from './account.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, PerfilComponent, AccountComponent],
+  declarations: [LoginComponent, RegisterComponent, PerfilComponent],
   imports: [ CommonModule ],
   exports: [],
   providers: [],

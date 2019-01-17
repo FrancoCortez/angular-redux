@@ -1,4 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {background-color: #F9F9F9 !important;  height: 100%;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+body {margin: 0;}
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {color: lightslategray;}
+.container-flex {display: flex;flex-direction: column;}
+.container-flex > * { width: 100%;}
+.container-flex form {margin-bottom: 20px;}
+.container-flex form > * {margin: 5px 0;}
+.container-flex .mat-radio-button {margin: 0 5px;}
+.text-left {text-align: left !important;}
+.text-right {text-align: right !important;}
+.text-center {text-align: center !important;}
+.cdk-overlay-container {position: fixed !important;z-index: 10000 !important;}
+.grid-container { margin: 20px}
+.dashboard-card { position: absolute; top: 15px;left: 15px; right: 15px; bottom: 15px; margin-right: 25px;}
+.more-button {position: absolute; top: 5px; right: 10px;}
+.dashboard-card-content {text-align: center;}
+.sidenav-container {height: 100%;}
+.sidenav {width: 300px; background-image: url('assets/img/descarga.png'); height: 100%;}
+.mat-toolbar.mat-primary {position: sticky;top: 0;z-index: 1;}
+.mat-toolbar .mat-toolbar-multiple-rows{background-color: w}
+.mat-toolbar.mat-primary {background: #71286F !important; color: #fff !important; }
+button.mat-primary {background-color: #932390 !important;}
+.mat-fab.mat-accent[disabled], .mat-fab.mat-primary[disabled], .mat-fab.mat-warn[disabled], .mat-fab[disabled][disabled], .mat-flat-button.mat-accent[disabled], .mat-flat-button.mat-primary[disabled], .mat-flat-button.mat-warn[disabled], .mat-flat-button[disabled][disabled], .mat-mini-fab.mat-accent[disabled], .mat-mini-fab.mat-primary[disabled], .mat-mini-fab.mat-warn[disabled], .mat-mini-fab[disabled][disabled], .mat-raised-button.mat-accent[disabled], .mat-raised-button.mat-primary[disabled], .mat-raised-button.mat-warn[disabled], .mat-raised-button[disabled][disabled] {
+  background-color: rgba(0,0,0,.12) !important;}
+.example-loading-shade {position: absolute;top: 0; left: 0;bottom: 0;right: 0;background: rgba(0, 0, 0, 0.15);z-index: 1000000;display: flex;align-items: center;justify-content: center;}
+.example-container { height: 600px;overflow: auto;}
+table {width: 100%;overflow-x: auto;}
+.mat-form-field {font-size: 14px; width: 100%;}
+td, th {width: 25%;}
+td.mat-column-star {width: 20px;padding-right: 8px;}
+th.mat-column-position, td.mat-column-position {padding-left: 8px;}
+.mat-table-sticky:first-child {border-right: 1px solid #e0e0e0;}
+.mat-table-sticky:last-child {border-left: 1px solid #e0e0e0;}
+.mat-paginator-sticky {bottom: 0px;position: sticky;z-index: 10;}
+.grid-container {margin: 20px;}
+.dashboard-card { position: absolute; top: 15px; left: 15px; right: 15px;bottom: 15px;}
+.more-button {position: absolute;top: 5px; right: 10px;}
+/**Spiner**/
+.mat-progress-spinner circle, .mat-spinner circle {stroke: #932390; }
+/**Feclas de sort**/
+.mat-sort-header-arrow {color: #e0e0e0;}
+/**Cambio de los Input text**/
+.mat-input-element {caret-color: #932390;}
+.mat-form-field.mat-focused .mat-form-field-label {color: #932390 !important;}
+.mat-form-field.mat-focused .mat-form-field-ripple{ background-color:#932390 !important;}
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {color: #932390 !important;}
