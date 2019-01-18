@@ -1,3 +1,28 @@
-<p>
-  area-edit works!
-</p>
+<mat-card-content>
+  <div class="example-loading-shade" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div class="container" style="padding-top: 40px;">
+    <form [formGroup]="rFormInsert">
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="" formControlName="name" required>
+        <mat-error *ngIf="rFormInsert.controls['name'].errors && rFormInsert.controls['name'].errors.required">El
+          nombre del área es obligatorio</mat-error>
+        <mat-error *ngIf="rFormInsert.controls['name'].errors && rFormInsert.controls['name'].errors.minlength">El
+          nombre del área debe tener como mínimo 3 caracteres</mat-error>
+        <mat-error *ngIf="rFormInsert.controls['name'].errors && rFormInsert.controls['name'].errors.maxLength">El
+          nombre del área debe tener como máximo 50 caracteres</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput placeholder="" [rows]=4 formControlName="description"></textarea>
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="container text-center" style="margin-top: 20px;">
+    <button mat-raised-button color="primary" class="mat-elevation-z2" style="margin-right: 15px;" [disabled]="!rFormInsert.valid"
+      (click)="update(rFormInsert.value); rFormInsert.reset();">Editar</button>
+    <button mat-raised-button color="primary" class="mat-elevation-z2" (click)="back(); rFormInsert.reset();">Volver</button>
+  </div>
+</mat-card-content>

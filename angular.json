@@ -25,6 +25,7 @@
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap-grid.min.css",
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "./src/assets/css/table.css",
               "src/styles.css"
             ],
             "scripts": []

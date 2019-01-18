@@ -1,3 +1,50 @@
-<p>
-  area-list works!
-</p>
+<mat-card-content>
+  <div class="example-loading-shade" *ngIf="isLoadingAll">
+    <mat-spinner></mat-spinner>
+  </div>
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscador">
+  </mat-form-field>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="name" class="text-center">
+        <th mat-header-cell style="background-color: #932390; color: white;" *matHeaderCellDef mat-sort-header class="text-center">
+          Nombre </th>
+        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description" class="text-center">
+        <th mat-header-cell style="background-color: #932390; color: white;" *matHeaderCellDef mat-sort-header class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Descripción </th>
+        <td mat-cell *matCellDef="let row"> {{row.description}} </td>
+      </ng-container>
+      <!-- Operations -->
+      <ng-container matColumnDef="star">
+        <th mat-header-cell style="background-color: #932390; color: white;" *matHeaderCellDef class="text-center">Action</th>
+        <td mat-cell *matCellDef="let element" class="text-center">
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="sendUpdate(element._id)">
+              <mat-icon>edit</mat-icon>
+              <span>Editar</span>
+            </button>
+            <button mat-menu-item (click)="sendDelete(element._id)">
+              <mat-icon>delete</mat-icon>
+              <span>Eliminar</span>
+            </button>
+          </mat-menu>
+        </td>
+      </ng-container>
+      <!-- Definitions -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+    </table>
+  </div>
+  <mat-paginator [pageSizeOptions]="[10, 25, 100]" class="mat-paginator-sticky"></mat-paginator>
+  <div class="container text-center" style="margin-top: 20px;">
+    <button mat-raised-button color="primary" (click)="add()" class="mat-elevation-z2">Agregar</button>
+  </div>
+</mat-card-content>

@@ -1,3 +1,47 @@
-<p>
-  area-delete works!
-</p>
+<mat-card-content>
+  <div class="example-loading-shade" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+  </div>
+  <mat-divider></mat-divider>
+  <br>
+  <table class="table table-responsive table-bordered" *ngIf="area && !isLoading">
+    <tbody>
+      <tr>
+        <td> Id </td>
+        <td> {{area._id}}</td>
+      </tr>
+      <tr>
+        <td> Nombre </td>
+        <td> {{area.name}}</td>
+      </tr>
+      <tr>
+        <td> Descripción </td>
+        <td> {{area.description}}</td>
+      </tr>
+      <tr>
+        <td> Creado por </td>
+        <td> {{area.auditing.createdBy}}</td>
+      </tr>
+      <tr>
+        <td> Fecha de creación </td>
+        <td> {{area.auditing.createdDate | date : 'dd/MM/yyyy'}}</td>
+      </tr>
+      <tr>
+        <td> Editado por última vez por </td>
+        <td> {{area.auditing.lastModifiedBy}}</td>
+      </tr>
+      <tr>
+        <td> Fecha de última edición </td>
+        <td> {{area.auditing.lastModifiedDate | date : 'dd/MM/yyyy'}}</td>
+      </tr>
+      <tr>
+        <td> Versión de cambios </td>
+        <td> {{area.auditing.version}}</td>
+      </tr>
+    </tbody>
+  </table>
+</mat-card-content>
+<mat-card-actions class="text-center mb-5">
+  <button mat-raised-button style="width: 100px;" color="primary" class="mat-elevation-z2" (click)="delete()">Eliminar</button>
+  <button mat-raised-button style="width: 100px;" color="primary" class="mat-elevation-z2" (click)="back()">Volver</button>
+</mat-card-actions>

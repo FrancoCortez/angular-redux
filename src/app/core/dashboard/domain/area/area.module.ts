@@ -12,6 +12,7 @@ import { StoreModule } from '@ngrx/store';
 import { areaReducer } from './store/reducers/area.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AreaEffects } from './store/effects/area.effects';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,8 @@ import { AreaEffects } from './store/effects/area.effects';
   imports: [
     CommonModule,
     AppMaterialModule,
+    ReactiveFormsModule,
+    FormsModule,
     RouterModule.forChild(AREA_ROUTES),
     StoreModule.forFeature('area', areaReducer),
     EffectsModule.forFeature([AreaEffects])

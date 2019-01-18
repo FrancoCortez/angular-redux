@@ -4,9 +4,10 @@ import { LoginComponent } from '../core/account/login/login.component';
 import { RegisterComponent } from '../core/account/register/register.component';
 
 export const APP_ROUTES: Routes = [
-  { path: '', component: IndexComponent },
+  // { path: '', component: IndexComponent },
+  // { path: '', loadChildren: './../core/dashboard/dashboard.module#DashboardModule'},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'dashboard', loadChildren: './../core/dashboard/dashboard.module#DashboardModule'},
-  { path: '**', redirectTo: '', pathMatch: 'full'}
+  { path: '**', redirectTo: 'dashboard', pathMatch: 'full'}
 ];

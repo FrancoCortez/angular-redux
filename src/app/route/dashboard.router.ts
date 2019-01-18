@@ -12,8 +12,8 @@ export const AREA_ROUTES: Routes = [
   {path: '', component: AreaComponent, children: [
     {path: 'list', component: AreaListComponent},
     {path: 'add', component: AreaAddComponent},
-    {path: 'edit', component: AreaEditComponent},
-    {path: 'delete', component: AreaDeleteComponent}
+    {path: 'edit/:id', component: AreaEditComponent},
+    {path: 'delete/:id', component: AreaDeleteComponent}
   ]}
 ];
 export const DASHBOARD_ROUTES: Routes = [
